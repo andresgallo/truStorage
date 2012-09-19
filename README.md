@@ -1,7 +1,7 @@
 Andres Gallo's Tru Storage-
 ============================
 
-Local storage is one of the most useful features introduced with html5, allowing for persistent storage through the user experiences we create. With that said, its limitation to strings is something which I found to be a huge problem. The limitation to just strings was polluting local storage, so a bit more structure is good. This is the product of a saturday well spent. Please enjoy.
+Local storage is one of the most useful features introduced with html5, allowing for persistent storage through the user experiences we create. With that said, its limitation to strings is something which I found to be a huge problem. The limitation to just strings was polluting local storage, so a bit more structure is good. This is the product of a saturday well spent :) Please enjoy.
 
 Using it in javascript
 ----------------------
@@ -31,4 +31,7 @@ To use it simply have this script available before the code where you will be th
 	
 ###### Setting it inside a nested object (Lets change the value of the inner most key to be a string)
     truStorage.setItem('myKey.mySubkey.myKeyInsideSubKey',{innerKey : 'now I am an object'}); 
+	
+	
+**Will add support for sessionStorage sometime as well**
 	
