@@ -1,5 +1,5 @@
-Andres Gallo's Tru Storage-
-============================
+Andres Gallo's Tru Storage-New script version supporting Modifiers
+==================================================================
 
 Local storage is one of the most useful features introduced with html5, allowing for persistent storage through the user experiences we create. With that said, its limitation to strings is something which I found to be a huge problem. The limitation to just strings was polluting local storage, so a bit more structure is good. This is the product of a saturday well spent :) Please enjoy.
 
@@ -34,4 +34,21 @@ To use it simply have this script available before the code where you will be th
 	
 	
 **Will add support for sessionStorage sometime as well**
-	
+
+Using version WITH MODIFIERS (supports modifiers for arrays such as push, shift, unshift...)
+--------------------------------------------------------------------------------------------
+
+I have kept the version with modifiers as a separate script.  Only one of the two scripts is needed. The modifiers version is only about 3 lines or so larger.  I have kept the original available just in case. To use the modifiers the rules above still apply. The only difference is the third parameter is the modifier.  If a modifier is specifier then the second parameter, becomes the array to pass to the modifier instead. 
+
+### Lets setup an array to show how the native js modifiers can be used ######
+	truStorage.setItem('a',{});
+	truStorage.setItem('a.b',[1,2,3]);//Now we have set {a : {b: [1,2,3]}}
+
+	//Lets use native javascript modifiers to add data to that nested array. We will use Array.push method
+	truStorage.setItem('a.b',[4,5,6],'push');//Now we have set {a : {b: [1,2,3,4,5,6]}} if we look at the entire object
+
+**Think of this as myArrayVariable.push([4,5,6])  **
+**All methods/modifiers in native javacript can be used (shift,pop, unshift,push,substr....)  **
+
+
+
