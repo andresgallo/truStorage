@@ -48,7 +48,7 @@ I have kept the version with modifiers as a separate script.  Only one of the tw
 	truStorage.setItem('a.b',[4,5,6],'push');//Now we have set {a : {b: [1,2,3,4,5,6]}} if we look at the entire object
 
 **Think of this as myArrayVariable.push([4,5,6])  **
-**All methods/modifiers in native javacript can be used (shift,pop, unshift,push,substr....)  **
+**All methods/modifiers (which modify the original item) in native javacript can be used (shift,pop, unshift,push,....)  **
 
 
 
