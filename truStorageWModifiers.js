@@ -22,7 +22,10 @@ truStorage = {
 			var key = strArr[i];
 
 			if(typeof currentLevel === "undefined" ||
-				typeof currentLevel !== "object")console.warn('cannot append key to non object'),return false;
+				typeof currentLevel !== "object"){
+				console.warn('cannot append key to non object');
+				return false;
+			}
             
             
 			if(isSetMode && i === strArrLn -1){
