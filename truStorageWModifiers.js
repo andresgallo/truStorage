@@ -22,14 +22,14 @@ truStorage = {
 			var key = strArr[i];
 
 			if(typeof currentLevel === "undefined" ||
-				typeof currentLevel !== "object")console.warn('cannot append key to non object');
+				typeof currentLevel !== "object")console.warn('cannot append key to non object'),return false;
             
             
 			if(isSetMode && i === strArrLn -1){
                  if(modifier){
                     var r = this.makeFormat(currentLevel[key]);
                     r[modifier].apply(r,JSON.parse(setVal));
-console.warn(r);    setVal = r;
+					setVal = r;
                  }currentLevel[key] = setVal;	
             }
 
