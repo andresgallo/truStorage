@@ -1,6 +1,6 @@
 /* =============================================================================
    Andres Gallo's, truStorage
-   *(Allows storage of more than just strings allowing storage of strings, integers and json.)
+   *(Allows storage of more than just strings allowing storage of strings, integers, arrays and json.)
    ========================================================================== */
 
 truStorage = {   
