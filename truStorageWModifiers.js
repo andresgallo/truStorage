@@ -24,7 +24,7 @@ truStorage = {
 			if(typeof currentLevel === "undefined" ||
 				typeof currentLevel !== "object"){
 				console.warn('cannot append key to non object');
-				return false;
+				return null;
 			}
             
             
