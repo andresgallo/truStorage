@@ -49,6 +49,11 @@ truStorage = {
 
 		return currentLevel;
 	},
+	setDefault : function(str, value){
+		if (this.getItem(str) == undefined){
+			this.setItem(str, value)
+		}
+	},
 	setItem : function(str, value, modifier){
 		var fetchPath = this.readLocalObj(str,value,modifier);
 		return fetchPath;

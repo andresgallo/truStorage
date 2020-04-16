@@ -78,6 +78,12 @@ var TRUSTORAGE = function(storageType, root){
     return currentLevel;
   }
 
+  this.setDefault= function(str, value) {
+    if (this.getItem(str) == undefined) {
+      this.setItem(str, value)
+    }
+  };
+
   this.setItem= function(str, value, modifier){
     var fetchPath = _readLocalObj.call(this,str,value,modifier);
     return fetchPath;
