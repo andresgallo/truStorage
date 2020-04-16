@@ -38,7 +38,7 @@ truStorage = {
 
 			//Generate objects if needed
 			if( !(typeof currentLevel === "object" && key in currentLevel) ){
-				if(i !== strArrLn -1)currentLevel[key] = {};
+				if(i !== strArrLn -1)currentLevel[key] = i ? {} : '{}';
 				else currentLevel[key] = null;
 			}
 
@@ -48,6 +48,11 @@ truStorage = {
 		if(isSetMode)localStorage[rootKey] = JSON.stringify(objCopy);
 
 		return currentLevel;
+	},
+	setDefault : function(str, value){
+		if (this.getItem(str) == undefined){
+			this.setItem(str, value)
+		}
 	},
 	setItem : function(str, value, modifier){
 		var fetchPath = this.readLocalObj(str,value,modifier);

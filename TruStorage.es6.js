@@ -21,6 +21,12 @@ class TruStorage {
     this.prefix = root ? (root.key + '.') : ''
   }
 
+  setDefault (str, value) {
+    if (this.getItem(str) == undefined) {
+      this.setItem(str, value)
+    }
+  }
+
   setItem (str, value, modifier) {
     const fetchPath = TruStorage._readLocalObj.call(this, str, value, modifier)
     return fetchPath
@@ -115,7 +121,7 @@ class TruStorage {
       // Generate objects if needed
       if (isSetMode && !(typeof currentLevel === 'object' && key in currentLevel)) {
         if (i !== strArrLn - 1) {
-          currentLevel[key] = {}
+          currentLevel[key] = i ? {} : '{}'
         } else {
           return null
         }
@@ -145,6 +151,7 @@ function getStorageObj (storageType) {
   })())
 
   return {
+    setDefault: storageObj.setDefault.bind(storageObj),
     setItem: storageObj.setItem.bind(storageObj),
     getItem: storageObj.getItem.bind(storageObj),
     removeItem: storageObj.removeItem.bind(storageObj),

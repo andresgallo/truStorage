@@ -68,7 +68,7 @@ var TRUSTORAGE = function(storageType, root){
 
       //Generate objects if needed
       if( isSetMode && !(typeof currentLevel === "object" && key in currentLevel) ){
-        if(i !== strArrLn -1){currentLevel[key] = {};}
+        if(i !== strArrLn -1){currentLevel[key] = i ? {} : '{}';}
         else {return null;}
       }
       currentLevel = _makeFormat(currentLevel[key]);
@@ -77,6 +77,12 @@ var TRUSTORAGE = function(storageType, root){
     if(isSetMode){storageType[rootKey] = JSON.stringify(objCopy);}
     return currentLevel;
   }
+
+  this.setDefault= function(str, value) {
+    if (this.getItem(str) == undefined) {
+      this.setItem(str, value)
+    }
+  };
 
   this.setItem= function(str, value, modifier){
     var fetchPath = _readLocalObj.call(this,str,value,modifier);
