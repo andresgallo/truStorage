@@ -68,7 +68,7 @@ var TRUSTORAGE = function(storageType, root){
 
       //Generate objects if needed
       if( isSetMode && !(typeof currentLevel === "object" && key in currentLevel) ){
-        if(i !== strArrLn -1){currentLevel[key] = {};}
+        if(i !== strArrLn -1){currentLevel[key] = i ? {} : '{}';}
         else {return null;}
       }
       currentLevel = _makeFormat(currentLevel[key]);

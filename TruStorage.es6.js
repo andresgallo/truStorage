@@ -115,7 +115,7 @@ class TruStorage {
       // Generate objects if needed
       if (isSetMode && !(typeof currentLevel === 'object' && key in currentLevel)) {
         if (i !== strArrLn - 1) {
-          currentLevel[key] = {}
+          currentLevel[key] = i ? {} : '{}'
         } else {
           return null
         }

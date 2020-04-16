@@ -38,7 +38,7 @@ truStorage = {
 
 			//Generate objects if needed
 			if( !(typeof currentLevel === "object" && key in currentLevel) ){
-				if(i !== strArrLn -1)currentLevel[key] = {};
+				if(i !== strArrLn -1)currentLevel[key] = i ? {} : '{}';
 				else currentLevel[key] = null;
 			}
 
